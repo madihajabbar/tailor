@@ -1,313 +1,779 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desi Tailoring & Alterations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Using the deep rich teal/green from your inspiration image for buttons */
-            --primary-dark: #163c38; 
-            --bg-light: #ffffff;
-            --text-dark: #222222;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- NAVBAR --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 6%;
-            background-color: var(--bg-light);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .nav-logo img {
-            height: 65px; 
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-contact {
-            padding: 12px 28px;
-            border: 1px solid #ddd;
-            background: transparent;
-            color: var(--text-dark);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-contact:hover {
-            border-color: var(--text-dark);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            display: flex;
-            height: 85vh;
-            background-color: #f4f4f4;
-        }
-
-        .hero-left, .hero-right {
-            flex: 1;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* PLACEHOLDER IMAGES - Replace URLs with your own photos of fabrics/tailoring */
-        .hero-left {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1583391733958-d25e61c2c3e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            display: flex;
-            align-items: center;
-            padding: 0 8%;
-        }
-
-        .hero-right {
-            background-image: url('https://images.unsplash.com/photo-1605020420620-20c943cc4669?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-        }
-
-        .hero-content {
-            color: #ffffff;
-            max-width: 550px;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            padding: 16px 45px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0f2b28;
-        }
-
-        /* --- FEATURED SERVICES --- */
-        .services-section {
-            padding: 100px 6%;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: #ffffff;
-            border: 1px solid #f0f0f0;
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about-section {
-            display: flex;
-            padding: 100px 6%;
-            background-color: #fafafa;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .about-text {
-            flex: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
-            color: var(--text-dark);
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            margin-bottom: 25px;
-            color: #444;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        footer p {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            letter-spacing: 1px;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column;
-                height: auto;
-            }
-            .hero-left, .hero-right {
-                min-height: 450px;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .nav-links {
-                display: none; 
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi Stitch – Tailoring & Alterations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:    #1b5c4c;
+    --teal-d:  #143f35;
+    --teal-l:  #22725e;
+    --gold:    #c9a84c;
+    --gold-l:  #e2c47a;
+    --cream:   #f9f5ef;
+    --white:   #ffffff;
+    --dark:    #1a1a18;
+    --mid:     #555550;
+  }
+ 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+ 
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    box-shadow: 0 1px 12px rgba(0,0,0,.08);
+  }
+ 
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+ 
+  .logo svg { width: 44px; height: 44px; }
+ 
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--teal); letter-spacing: .03em; }
+  .logo-text .sub   { font-size: .6rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+ 
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: .82rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--dark); transition: color .2s; }
+  .nav-links a:hover { color: var(--teal); }
+ 
+  .nav-cta {
+    background: transparent; border: 1.5px solid var(--teal); color: var(--teal);
+    padding: 9px 22px; font-family: 'Jost', sans-serif; font-size: .78rem;
+    font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+    cursor: pointer; transition: all .25s;
+  }
+  .nav-cta:hover { background: var(--teal); color: var(--white); }
+ 
+  /* ── HERO ── */
+  .hero {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: 58% 42%;
+    height: calc(100vh - 72px);
+    min-height: 560px;
+    overflow: hidden;
+  }
+ 
+  .hero-left {
+    position: relative;
+    background: linear-gradient(135deg, var(--teal-d) 0%, var(--teal) 60%, #2a7a66 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 60px 64px;
+    overflow: hidden;
+  }
+ 
+  /* decorative mandala-ish circle */
+  .hero-left::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.18);
+    pointer-events: none;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.12);
+    pointer-events: none;
+  }
+ 
+  .hero-tag {
+    display: inline-block;
+    font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--gold-l);
+    margin-bottom: 20px;
+    opacity: 0; animation: fadeUp .7s .2s forwards;
+  }
+ 
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    opacity: 0; animation: fadeUp .7s .4s forwards;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold-l); }
+ 
+  .hero-sub {
+    font-size: .92rem; font-weight: 300; color: rgba(255,255,255,.75);
+    line-height: 1.7; max-width: 420px;
+    margin-bottom: 36px;
+    opacity: 0; animation: fadeUp .7s .6s forwards;
+  }
+ 
+  .hero-btns { display: flex; gap: 14px; opacity: 0; animation: fadeUp .7s .8s forwards; }
+ 
+  .btn-primary {
+    background: var(--gold); color: var(--dark);
+    padding: 14px 32px; border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif; font-size: .8rem;
+    font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    transition: background .2s, transform .2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-l); transform: translateY(-2px); }
+ 
+  .btn-ghost {
+    background: transparent; color: var(--white);
+    padding: 14px 32px; border: 1.5px solid rgba(255,255,255,.4);
+    cursor: pointer; font-family: 'Jost', sans-serif; font-size: .8rem;
+    font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
+    transition: border-color .2s, color .2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--white); color: var(--white); }
+ 
+  /* gold divider line */
+  .hero-line {
+    position: absolute; top: 0; right: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold) 40%, transparent);
+  }
+ 
+  .hero-right {
+    position: relative;
+    background: var(--teal-d);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 48px;
+    overflow: hidden;
+  }
+ 
+  /* ornamental pattern */
+  .hero-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(201,168,76,.06) 0%, transparent 65%),
+      repeating-linear-gradient(45deg, rgba(201,168,76,.04) 0px, rgba(201,168,76,.04) 1px, transparent 1px, transparent 28px),
+      repeating-linear-gradient(-45deg, rgba(201,168,76,.04) 0px, rgba(201,168,76,.04) 1px, transparent 1px, transparent 28px);
+    pointer-events: none;
+  }
+ 
+  .hero-badge {
+    position: relative; z-index: 1;
+    width: 180px; height: 180px;
+    border: 1.5px solid rgba(201,168,76,.45);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    margin-bottom: 40px;
+    animation: spinSlow 30s linear infinite;
+  }
+  .hero-badge::after {
+    content: '';
+    position: absolute; inset: 10px;
+    border: 1px solid rgba(201,168,76,.25);
+    border-radius: 50%;
+  }
+  .hero-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 300;
+    color: var(--gold-l); line-height: 1;
+  }
+  .hero-badge-txt {
+    font-size: .62rem; letter-spacing: .15em;
+    text-transform: uppercase; color: rgba(255,255,255,.6);
+    text-align: center; margin-top: 4px;
+  }
+ 
+  .hero-services-list { position: relative; z-index: 1; text-align: center; }
+  .hero-services-list p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: rgba(255,255,255,.7);
+    margin: 8px 0; letter-spacing: .04em;
+  }
+  .hero-services-list p + p { border-top: 1px solid rgba(201,168,76,.15); padding-top: 8px; }
+ 
+  /* ── STRIP ── */
+  .strip {
+    background: var(--gold);
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: center; gap: 40px;
+    overflow: hidden;
+  }
+  .strip-item {
+    font-size: .75rem; font-weight: 600; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--dark);
+    white-space: nowrap;
+  }
+  .strip-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--dark); opacity: .4; }
+ 
+  /* ── ABOUT ── */
+  .about {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--white);
+  }
+ 
+  .about-image {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-d) 100%);
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+ 
+  /* needle & thread illustration */
+  .about-image::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(201,168,76,.12) 0%, transparent 60%),
+      repeating-linear-gradient(60deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 1px, transparent 18px);
+  }
+ 
+  .about-icon {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+  .about-icon svg { width: 80px; height: 80px; opacity: .85; }
+ 
+  .about-content {
+    padding: 80px 72px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .section-label {
+    font-size: .72rem; font-weight: 500; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .section-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 400;
+    line-height: 1.2; color: var(--dark);
+    margin-bottom: 24px;
+  }
+  .section-h2 em { font-style: italic; color: var(--teal); }
+  .section-body {
+    font-size: .95rem; font-weight: 300; line-height: 1.9;
+    color: var(--mid); margin-bottom: 36px;
+  }
+ 
+  .stats { display: flex; gap: 36px; margin-bottom: 36px; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem; font-weight: 300; color: var(--teal);
+    line-height: 1;
+  }
+  .stat-lbl { font-size: .75rem; color: var(--mid); letter-spacing: .05em; margin-top: 4px; }
+ 
+  /* ── SERVICES ── */
+  .services { padding: 100px 5%; background: var(--cream); }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+ 
+  .service-card {
+    background: var(--white);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    cursor: default;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    width: 0; height: 3px;
+    background: var(--gold);
+    transition: width .4s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+  .service-card:hover::after { width: 100%; }
+ 
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300;
+    color: rgba(27,92,76,.08);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .service-icon { margin-bottom: 20px; }
+  .service-icon svg { width: 36px; height: 36px; }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600;
+    color: var(--dark); margin-bottom: 12px;
+  }
+  .service-desc {
+    font-size: .88rem; font-weight: 300; line-height: 1.8;
+    color: var(--mid);
+  }
+ 
+  /* ── PROCESS ── */
+  .process {
+    background: var(--teal-d);
+    padding: 100px 5%;
+    text-align: center;
+  }
+  .process .section-label { color: var(--gold); }
+  .process .section-h2 { color: var(--white); margin-bottom: 60px; }
+  .process .section-h2 em { color: var(--gold-l); }
+ 
+  .steps { display: flex; justify-content: center; gap: 0; }
+  .step {
+    flex: 1; max-width: 220px;
+    position: relative;
+    padding: 0 24px;
+  }
+  .step::after {
+    content: '';
+    position: absolute; top: 28px; left: calc(50% + 28px);
+    width: calc(100% - 56px); height: 1px;
+    background: rgba(201,168,76,.25);
+  }
+  .step:last-child::after { display: none; }
+ 
+  .step-circle {
+    width: 56px; height: 56px; border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; color: var(--gold-l);
+  }
+  .step-name { font-size: .85rem; font-weight: 500; letter-spacing: .06em; color: var(--white); margin-bottom: 8px; }
+  .step-desc { font-size: .8rem; font-weight: 300; color: rgba(255,255,255,.55); line-height: 1.7; }
+ 
+  /* ── CONTACT ── */
+  .contact { background: var(--white); padding: 100px 5%; }
+  .contact-inner {
+    max-width: 720px; margin: 0 auto; text-align: center;
+  }
+  .contact .section-h2 { margin-bottom: 16px; }
+  .contact .section-body { margin-bottom: 48px; }
+ 
+  .contact-cards { display: flex; gap: 24px; justify-content: center; margin-bottom: 48px; flex-wrap: wrap; }
+  .contact-card {
+    flex: 1; min-width: 200px;
+    border: 1.5px solid rgba(27,92,76,.15);
+    padding: 32px 28px; text-align: center;
+    transition: border-color .25s, transform .25s;
+  }
+  .contact-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+  .contact-card svg { margin-bottom: 14px; }
+  .contact-card-label { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .contact-card-val { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--dark); }
+ 
+  .wa-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #25d366; color: var(--white);
+    padding: 16px 40px; text-decoration: none;
+    font-family: 'Jost', sans-serif; font-size: .85rem;
+    font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    transition: background .2s, transform .2s;
+    margin: 0 auto;
+  }
+  .wa-btn:hover { background: #1aab55; transform: translateY(-2px); }
+ 
+  /* ── FOOTER ── */
+  footer {
+    background: var(--teal-d); padding: 40px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  footer .logo-text .brand { color: var(--gold-l); }
+  .footer-copy { font-size: .78rem; color: rgba(255,255,255,.4); letter-spacing: .05em; }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a { font-size: .78rem; color: rgba(255,255,255,.5); text-decoration: none; letter-spacing: .08em; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold-l); }
+ 
+  /* ── WHATSAPP FAB ── */
+  .wa-fab {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: #25d366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,.4);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  .wa-fab:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.5); }
+ 
+  /* ── KEYFRAMES ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.4); }
+    50%       { box-shadow: 0 6px 36px rgba(37,211,102,.65); }
+  }
+ 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 32px 56px; min-height: 480px; }
+    .about { grid-template-columns: 1fr; }
+    .about-image { min-height: 260px; }
+    .about-content { padding: 60px 36px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps { flex-wrap: wrap; gap: 40px; }
+    .step::after { display: none; }
+    footer { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
 </head>
 <body>
-
-    <nav>
-        <div class="nav-logo">
-            <img src="logo.jpg" alt="Desi Tailoring Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Featured</a></li>
-            <li><a href="#about">About Us</a></li>
-        </ul>
-        <a href="https://wa.me/14372197547" class="nav-contact" target="_blank">Contact Us</a>
-    </nav>
-
-    <section class="hero" id="home">
-        <div class="hero-left">
-            <div class="hero-content">
-                <h1>Timeless Elegance, Tailored to Perfection</h1>
-                <p>From custom resizing to expert finishing — trusted with your Desi wardrobe every step of the way.</p>
-                <a href="https://wa.me/14372197547" class="btn-primary" target="_blank">Book a Fitting</a>
-            </div>
-        </div>
-        <div class="hero-right">
-            </div>
-    </section>
-
-    <section class="services-section" id="services">
-        <div class="section-header">
-            <h2>Featured</h2>
-            <a href="https://wa.me/14372197547" class="btn-primary" target="_blank">View All</a>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Sarees</h3>
-                <p>Precision fall and pico stitching, custom draping adjustments, and delicate finishing to ensure a flawless silhouette.</p>
-            </div>
-            <div class="service-card">
-                <h3>Salwar Kameez</h3>
-                <p>Expert resizing, sleeve adjustments, and neckline modifications tailored precisely to your measurements.</p>
-            </div>
-            <div class="service-card">
-                <h3>Blouse Fittings</h3>
-                <p>Custom tailoring for lehenga and saree blouses, focusing on perfect fit, padding adjustments, and intricate detailing.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-section" id="about">
-        <div class="about-text">
-            <h2>Over 15 Years of Excellence</h2>
-            <p>We specialize in tailoring and alterations for South Asian clothing. From sarees and salwar kameez to blouse fittings and resizing, each piece is handled with care and precision.</p>
-            <p>We understand the fit, style, and unique details that Desi clothing requires, and focus on making sure every outfit looks and feels perfectly right for any occasion.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 DESI TAILORING & ALTERATIONS. ALL RIGHTS RESERVED.</p>
-    </footer>
-
+ 
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <!-- Sun logo (SVG recreation) -->
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(22,26)">
+        <!-- rays -->
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(30)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(60)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(90)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(120)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(150)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(180)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(210)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(240)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(270)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(300)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(330)"/>
+        <!-- arc base -->
+        <path d="M -8 0 A 8 8 0 0 1 8 0" stroke="#1b5c4c" stroke-width="2" fill="none"/>
+        <!-- centre dot -->
+        <circle cx="0" cy="-7" r="2.5" fill="#c9a84c"/>
+      </g>
+    </svg>
+    <div class="logo-text">
+      <span class="brand">Desi Stitch</span>
+      <span class="sub">Tailoring &amp; Alterations</span>
+    </div>
+  </a>
+ 
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+ 
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">South Asian Tailoring Specialists</span>
+    <h1 class="hero-h1">Timeless Fit,<br><em>Crafted</em> With<br>Precision</h1>
+    <p class="hero-sub">From Vintage Craft to Modern Elegance — every piece handled with care, skill, and 15+ years of mastery in Desi clothing.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#services">Our Services</a>
+      <a class="btn-ghost" href="https://wa.me/14372197547" target="_blank">WhatsApp Us</a>
+    </div>
+    <div class="hero-line"></div>
+  </div>
+ 
+  <div class="hero-right">
+    <div class="hero-badge">
+      <span class="hero-badge-num">15+</span>
+      <span class="hero-badge-txt">Years of<br>Experience</span>
+    </div>
+    <div class="hero-services-list">
+      <p>Sarees &amp; Lehengas</p>
+      <p>Salwar Kameez</p>
+      <p>Blouse Fitting</p>
+      <p>Resizing &amp; Alterations</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- TRUST STRIP -->
+<div class="strip">
+  <span class="strip-item">Expert Tailoring</span>
+  <span class="strip-dot"></span>
+  <span class="strip-item">South Asian Specialists</span>
+  <span class="strip-dot"></span>
+  <span class="strip-item">15+ Years Experience</span>
+  <span class="strip-dot"></span>
+  <span class="strip-item">Precise Alterations</span>
+  <span class="strip-dot"></span>
+  <span class="strip-item">Trusted by Families</span>
+</div>
+ 
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image">
+    <div class="about-icon">
+      <!-- Needle & Thread SVG illustration -->
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- spool -->
+        <ellipse cx="40" cy="62" rx="18" ry="6" fill="rgba(201,168,76,.2)" stroke="#c9a84c" stroke-width="1.2"/>
+        <rect x="22" y="44" width="36" height="18" rx="2" fill="rgba(201,168,76,.1)" stroke="#c9a84c" stroke-width="1.2"/>
+        <ellipse cx="40" cy="44" rx="18" ry="6" fill="rgba(201,168,76,.2)" stroke="#c9a84c" stroke-width="1.2"/>
+        <!-- needle -->
+        <line x1="56" y1="10" x2="30" y2="38" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="57" cy="9" rx="3" ry="5" transform="rotate(45 57 9)" fill="rgba(255,255,255,.4)" stroke="rgba(255,255,255,.8)" stroke-width="1.2"/>
+        <circle cx="57" cy="8" r="2" fill="none" stroke="rgba(201,168,76,.9)" stroke-width="1"/>
+        <!-- thread curve -->
+        <path d="M 57 9 Q 70 30 40 44" stroke="#c9a84c" stroke-width="1.2" fill="none" stroke-dasharray="3 3" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+ 
+  <div class="about-content">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-h2">Specialists in <em>Desi</em><br>Clothing &amp; Fit</h2>
+    <p class="section-body">
+      With over 15 years of experience, we specialize in tailoring and alterations for South Asian clothing. From sarees and salwar kameez to blouse fittings and resizing, each piece is handled with care and precision.
+      <br><br>
+      We understand the fit, style, and details that Desi clothing requires, and focus on making sure every outfit looks and feels right — for your special occasion, or everyday elegance.
+    </p>
+    <div class="stats">
+      <div>
+        <div class="stat-num">15+</div>
+        <div class="stat-lbl">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-lbl">Handcrafted Care</div>
+      </div>
+    </div>
+    <a class="btn-primary" href="https://wa.me/14372197547" target="_blank" style="align-self:flex-start">Book a Consultation</a>
+  </div>
+</section>
+ 
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-h2">Our <em>Services</em></h2>
+  </div>
+ 
+  <div class="services-grid">
+ 
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M6 8 Q18 4 30 8 L28 28 Q18 32 8 28 Z"/>
+          <path d="M6 8 L8 28" opacity=".4"/>
+          <path d="M30 8 L28 28" opacity=".4"/>
+          <path d="M8 18 Q18 22 28 18" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="service-name">Saree &amp; Lehenga Work</div>
+      <p class="service-desc">Expert blouse stitching, saree fall &amp; piko, lace &amp; border additions, and full lehenga construction or restyling.</p>
+    </div>
+ 
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 4 L8 12 L4 12 L4 32 L32 32 L32 12 L28 12 L24 4 Z"/>
+          <path d="M12 4 Q18 8 24 4" opacity=".6"/>
+          <path d="M8 12 L28 12" opacity=".4"/>
+          <line x1="18" y1="12" x2="18" y2="32" opacity=".3"/>
+        </svg>
+      </div>
+      <div class="service-name">Salwar Kameez Tailoring</div>
+      <p class="service-desc">Custom stitching of kameez, salwar, and dupatta sets from your fabric — sized perfectly to your measurements.</p>
+    </div>
+ 
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="18" cy="18" r="12"/>
+          <path d="M10 18 Q14 10 18 18 Q22 26 26 18" opacity=".6"/>
+          <line x1="18" y1="6" x2="18" y2="10" opacity=".5"/>
+          <line x1="18" y1="26" x2="18" y2="30" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="service-name">Blouse Fitting</div>
+      <p class="service-desc">Precision blouse fitting, back neckline adjustments, sleeve alterations, and custom cut work for the perfect silhouette.</p>
+    </div>
+ 
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <rect x="4" y="6" width="28" height="24" rx="2"/>
+          <path d="M4 14 L32 14" opacity=".4"/>
+          <path d="M14 6 L14 30" opacity=".4"/>
+          <path d="M8 20 L12 20 M8 24 L12 24" opacity=".7"/>
+          <path d="M18 20 L28 20 M18 24 L28 24" opacity=".4"/>
+        </svg>
+      </div>
+      <div class="service-name">Resizing &amp; Alterations</div>
+      <p class="service-desc">Taking in or letting out existing outfits, hemming, waist adjustments, and full resizing for outfits passed down or bought abroad.</p>
+    </div>
+ 
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M6 10 L18 6 L30 10 L30 26 L18 30 L6 26 Z"/>
+          <path d="M6 10 L18 14 L30 10"/>
+          <path d="M18 14 L18 30" opacity=".5"/>
+          <circle cx="18" cy="10" r="2" fill="#1b5c4c" opacity=".3"/>
+        </svg>
+      </div>
+      <div class="service-name">Bridal &amp; Occasion Wear</div>
+      <p class="service-desc">Bridal outfit preparation, heavy work finishing, embroidery reinforcement, and final fitting for your most important day.</p>
+    </div>
+ 
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M6 26 L18 6 L30 26"/>
+          <path d="M10 20 L26 20" opacity=".5"/>
+          <line x1="18" y1="6" x2="18" y2="30" opacity=".3"/>
+          <circle cx="18" cy="29" r="2" fill="#c9a84c" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="service-name">Kurta &amp; Sherwani Tailoring</div>
+      <p class="service-desc">Men's kurta and sherwani stitching, collar work, button detailing, and alterations for a sharp, tailored look.</p>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- HOW IT WORKS -->
+<section class="process">
+  <p class="section-label">Simple Process</p>
+  <h2 class="section-h2">How It <em>Works</em></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <div class="step-name">WhatsApp Us</div>
+      <div class="step-desc">Send a message with your outfit and what you need. We'll get back to you quickly.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <div class="step-name">Drop Off</div>
+      <div class="step-desc">Bring your outfit in. We take measurements and discuss the details with you.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <div class="step-name">We Stitch</div>
+      <div class="step-desc">Each piece is carefully worked on by hand with full attention to fit and finish.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">4</div>
+      <div class="step-name">Pick Up &amp; Enjoy</div>
+      <div class="step-desc">Collect your outfit looking and feeling exactly how it should.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-h2">Ready to Get<br><em>the Perfect Fit?</em></h2>
+    <p class="section-body">Reach out via WhatsApp for a quick consultation. We're happy to answer any questions about your outfit and what we can do for you.</p>
+ 
+    <div class="contact-cards">
+      <div class="contact-card">
+        <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+          <path d="M14 2C7.37 2 2 7.37 2 14c0 2.13.56 4.12 1.53 5.84L2 26l6.33-1.5A11.94 11.94 0 0014 26c6.63 0 12-5.37 12-12S20.63 2 14 2z" stroke="#25d366" stroke-width="1.5" fill="none"/>
+          <path d="M10 9.5c.2.5 1.2 2.5 1.3 2.7.1.2.1.4 0 .6-.1.2-.5.7-.7.9-.2.2-.3.4-.1.7.8 1.3 1.8 2.3 3 3 .3.2.5.1.7-.1.2-.2.7-.8.9-.9.2-.1.4-.1.6 0 .2.1 2.2 1 2.7 1.3.5.2.5.5.4.8-.3.8-1.7 2.5-4.3 1.6-2.6-.9-5.4-4.4-5.7-4.7-.3-.3-2-2.7-1.1-5.3.9-2.6 2.5-2.7 3.3-2.6z" stroke="#25d366" stroke-width="1.2" fill="none"/>
+        </svg>
+        <div class="contact-card-label">WhatsApp</div>
+        <div class="contact-card-val">+1 (437) 219-7547</div>
+      </div>
+      <div class="contact-card">
+        <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+          <path d="M14 3C8 3 3 8 3 14c0 6 5 11 11 11s11-5 11-11S20 3 14 3z" stroke="#1b5c4c" stroke-width="1.5"/>
+          <path d="M14 8v6l4 2" stroke="#1b5c4c" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="contact-card-label">Hours</div>
+        <div class="contact-card-val">Mon – Sat, 10am – 7pm</div>
+      </div>
+    </div>
+ 
+    <a class="wa-btn" href="https://wa.me/14372197547" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+        <path d="M14 2C7.37 2 2 7.37 2 14c0 2.13.56 4.12 1.53 5.84L2 26l6.33-1.5A11.94 11.94 0 0014 26c6.63 0 12-5.37 12-12S20.63 2 14 2z" fill="white" opacity=".9"/>
+        <path d="M10 9.5c.2.5 1.2 2.5 1.3 2.7.1.2.1.4 0 .6-.1.2-.5.7-.7.9-.2.2-.3.4-.1.7.8 1.3 1.8 2.3 3 3 .3.2.5.1.7-.1.2-.2.7-.8.9-.9.2-.1.4-.1.6 0 .2.1 2.2 1 2.7 1.3.5.2.5.5.4.8-.3.8-1.7 2.5-4.3 1.6-2.6-.9-5.4-4.4-5.7-4.7-.3-.3-2-2.7-1.1-5.3.9-2.6 2.5-2.7 3.3-2.6z" fill="#25d366"/>
+      </svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <a class="logo" href="#">
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(22,26)">
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(30)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(60)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(90)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(120)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(150)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(180)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(210)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(240)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(270)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(300)"/>
+        <line x1="0" y1="-14" x2="0" y2="-10" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" transform="rotate(330)"/>
+        <path d="M -8 0 A 8 8 0 0 1 8 0" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-7" r="2.5" fill="#c9a84c"/>
+      </g>
+    </svg>
+    <div class="logo-text">
+      <span class="brand">Desi Stitch</span>
+      <span class="sub" style="color:rgba(255,255,255,.4)">Tailoring &amp; Alterations</span>
+    </div>
+  </a>
+ 
+  <span class="footer-copy">© 2025 Desi Stitch. All rights reserved.</span>
+ 
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+ 
+<!-- WhatsApp floating button -->
+<a class="wa-fab" href="https://wa.me/14372197547" target="_blank" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+    <path d="M14 1C6.82 1 1 6.82 1 14c0 2.4.63 4.65 1.73 6.6L1 27l6.6-1.71A13 13 0 0014 27c7.18 0 13-5.82 13-13S21.18 1 14 1z" fill="white"/>
+    <path d="M9.5 8.5c.22.55 1.35 2.8 1.46 3.03.11.22.11.45 0 .67-.11.22-.56.78-.78 1-.22.22-.34.45-.11.78.9 1.46 2.02 2.58 3.36 3.36.34.22.56.11.78-.11.22-.22.78-.9 1-.89.22 0 .45.11.67.22.22.11 2.47 1.12 3.03 1.46.56.22.56.56.45.9-.34.9-1.91 2.8-4.82 1.8-2.91-1-6.06-4.93-6.4-5.27-.34-.34-2.24-3.03-1.23-5.94 1-2.91 2.8-3.03 3.7-2.91z" fill="#25d366"/>
+  </svg>
+</a>
+ 
 </body>
 </html>
