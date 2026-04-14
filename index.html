@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desi Tailoring & Alterations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --bg-dark: #0a0e17; 
+            --text-light: #fdfdfd;
+            --text-muted: #a0aabf;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-weight: 400;
+        }
+
+        header {
+            padding: 60px 20px 30px;
+        }
+
+        .logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .experience-banner {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .experience-banner h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-banner p {
+            font-size: 1.15em;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .services {
+            padding: 50px 20px;
+            background-color: rgba(212, 175, 55, 0.03);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .service-list li {
+            background-color: transparent;
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--primary-gold);
+            letter-spacing: 0.5px;
+        }
+
+        .contact {
+            padding: 70px 20px;
+            flex-grow: 1;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 16px 36px;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe59;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        footer {
+            padding: 30px 20px;
+            font-size: 0.9em;
+            color: #555;
+            background-color: #06090f;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Desi Tailoring & Alterations Logo" class="logo">
+    </header>
+
+    <section class="experience-banner">
+        <h2>Over 15 Years of Experience</h2>
+        <p>We specialize in tailoring and alterations for South Asian clothing. From sarees and salwar kameez to blouse fittings and resizing, each piece is handled with care and precision.</p>
+        <p>We understand the fit, style, and details that Desi clothing requires, and focus on making sure every outfit looks and feels right.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <ul class="service-list">
+            <li>Sarees</li>
+            <li>Salwar Kameez</li>
+            <li>Blouse Fittings</li>
+            <li>Resizing</li>
+            <li>Custom Alterations</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Book a Fitting</h2>
+        <p>Message us directly on WhatsApp to discuss your tailoring needs, get a quote, or schedule an appointment.</p>
+        
+        <a href="https://wa.me/14372197547" class="whatsapp-btn" target="_blank">
+            Chat on WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>Proudly serving Toronto & the GTA.</p>
+        <p>&copy; 2026 Desi Tailoring & Alterations. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
