@@ -17,18 +17,18 @@
     --dark:    #1a1a18;
     --mid:     #555550;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: 'Jost', sans-serif;
     background: var(--cream);
     color: var(--dark);
     overflow-x: hidden;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -38,17 +38,17 @@
     height: 72px;
     box-shadow: 0 1px 12px rgba(0,0,0,.08);
   }
-
+ 
   .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-
+ 
   .logo-text { display: flex; flex-direction: column; line-height: 1; }
   .logo-text .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--teal); letter-spacing: .03em; }
   .logo-text .sub   { font-size: .6rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
-
+ 
   .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
   .nav-links a { text-decoration: none; font-size: .82rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--dark); transition: color .2s; }
   .nav-links a:hover { color: var(--teal); }
-
+ 
   .nav-cta {
     background: transparent; border: 1.5px solid var(--teal); color: var(--teal);
     padding: 9px 22px; font-family: 'Jost', sans-serif; font-size: .78rem;
@@ -56,7 +56,7 @@
     cursor: pointer; transition: all .25s;
   }
   .nav-cta:hover { background: var(--teal); color: var(--white); }
-
+ 
   /* ── HERO ── */
   .hero {
     margin-top: 72px;
@@ -66,7 +66,7 @@
     min-height: 560px;
     overflow: hidden;
   }
-
+ 
   .hero-left {
     position: relative;
     background: linear-gradient(135deg, var(--teal-d) 0%, var(--teal) 60%, #2a7a66 100%);
@@ -74,7 +74,7 @@
     padding: 60px 64px;
     overflow: hidden;
   }
-
+ 
   .hero-left::before {
     content: '';
     position: absolute; top: -80px; right: -80px;
@@ -91,7 +91,7 @@
     border: 1px solid rgba(201,168,76,.12);
     pointer-events: none;
   }
-
+ 
   .hero-tag {
     display: inline-block;
     font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
@@ -99,7 +99,7 @@
     margin-bottom: 20px;
     opacity: 0; animation: fadeUp .7s .2s forwards;
   }
-
+ 
   .hero-h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.4rem, 4.5vw, 3.8rem);
@@ -110,16 +110,16 @@
     opacity: 0; animation: fadeUp .7s .4s forwards;
   }
   .hero-h1 em { font-style: italic; color: var(--gold-l); }
-
+ 
   .hero-sub {
     font-size: .92rem; font-weight: 300; color: rgba(255,255,255,.75);
     line-height: 1.7; max-width: 420px;
     margin-bottom: 36px;
     opacity: 0; animation: fadeUp .7s .6s forwards;
   }
-
+ 
   .hero-btns { display: flex; gap: 14px; opacity: 0; animation: fadeUp .7s .8s forwards; }
-
+ 
   .btn-primary {
     background: var(--gold); color: var(--dark);
     padding: 14px 32px; border: none; cursor: pointer;
@@ -129,7 +129,7 @@
     text-decoration: none; display: inline-block;
   }
   .btn-primary:hover { background: var(--gold-l); transform: translateY(-2px); }
-
+ 
   .btn-ghost {
     background: transparent; color: var(--white);
     padding: 14px 32px; border: 1.5px solid rgba(255,255,255,.4);
@@ -139,13 +139,13 @@
     text-decoration: none; display: inline-block;
   }
   .btn-ghost:hover { border-color: var(--white); color: var(--white); }
-
+ 
   .hero-line {
     position: absolute; top: 0; right: 0;
     width: 2px; height: 100%;
     background: linear-gradient(to bottom, transparent, var(--gold) 40%, transparent);
   }
-
+ 
   .hero-right {
     position: relative;
     background: var(--teal-d);
@@ -154,7 +154,7 @@
     padding: 48px;
     overflow: hidden;
   }
-
+ 
   .hero-right::before {
     content: '';
     position: absolute; inset: 0;
@@ -164,7 +164,7 @@
       repeating-linear-gradient(-45deg, rgba(201,168,76,.04) 0px, rgba(201,168,76,.04) 1px, transparent 1px, transparent 28px);
     pointer-events: none;
   }
-
+ 
   .hero-badge {
     position: relative; z-index: 1;
     width: 180px; height: 180px;
@@ -191,7 +191,7 @@
     text-transform: uppercase; color: rgba(255,255,255,.6);
     text-align: center; margin-top: 4px;
   }
-
+ 
   .hero-services-list { position: relative; z-index: 1; text-align: center; }
   .hero-services-list p {
     font-family: 'Cormorant Garamond', serif;
@@ -199,7 +199,7 @@
     margin: 8px 0; letter-spacing: .04em;
   }
   .hero-services-list p + p { border-top: 1px solid rgba(201,168,76,.15); padding-top: 8px; }
-
+ 
   /* ── STRIP ── */
   .strip {
     background: var(--gold);
@@ -213,14 +213,14 @@
     white-space: nowrap;
   }
   .strip-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--dark); opacity: .4; }
-
+ 
   /* ── ABOUT ── */
   .about {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 0;
     background: var(--white);
   }
-
+ 
   .about-image {
     background: linear-gradient(135deg, var(--teal) 0%, var(--teal-d) 100%);
     min-height: 500px;
@@ -228,7 +228,7 @@
     overflow: hidden;
     display: flex; align-items: center; justify-content: center;
   }
-
+ 
   .about-image::before {
     content: '';
     position: absolute; inset: 0;
@@ -236,13 +236,13 @@
       radial-gradient(ellipse at 30% 40%, rgba(201,168,76,.12) 0%, transparent 60%),
       repeating-linear-gradient(60deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 1px, transparent 18px);
   }
-
+ 
   .about-icon {
     position: relative; z-index: 1;
     display: flex; flex-direction: column; align-items: center; gap: 20px;
   }
   .about-icon svg { width: 80px; height: 80px; opacity: .85; }
-
+ 
   .about-content {
     padding: 80px 72px;
     display: flex; flex-direction: column; justify-content: center;
@@ -263,7 +263,7 @@
     font-size: .95rem; font-weight: 300; line-height: 1.9;
     color: var(--mid); margin-bottom: 36px;
   }
-
+ 
   .stats { display: flex; gap: 36px; margin-bottom: 36px; }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
@@ -271,7 +271,7 @@
     line-height: 1;
   }
   .stat-lbl { font-size: .75rem; color: var(--mid); letter-spacing: .05em; margin-top: 4px; }
-
+ 
   /* ── SERVICES ── */
   .services { padding: 100px 5%; background: var(--cream); }
   .section-header { text-align: center; margin-bottom: 60px; }
@@ -280,7 +280,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
-
+ 
   .service-card {
     background: var(--white);
     padding: 48px 40px;
@@ -298,7 +298,7 @@
   }
   .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
   .service-card:hover::after { width: 100%; }
-
+ 
   .service-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5rem; font-weight: 300;
@@ -317,7 +317,7 @@
     font-size: .88rem; font-weight: 300; line-height: 1.8;
     color: var(--mid);
   }
-
+ 
   /* ── PROCESS ── */
   .process {
     background: var(--teal-d);
@@ -327,7 +327,7 @@
   .process .section-label { color: var(--gold); }
   .process .section-h2 { color: var(--white); margin-bottom: 60px; }
   .process .section-h2 em { color: var(--gold-l); }
-
+ 
   .steps { display: flex; justify-content: center; gap: 0; }
   .step {
     flex: 1; max-width: 220px;
@@ -341,7 +341,7 @@
     background: rgba(201,168,76,.25);
   }
   .step:last-child::after { display: none; }
-
+ 
   .step-circle {
     width: 56px; height: 56px; border-radius: 50%;
     border: 1.5px solid var(--gold);
@@ -352,7 +352,7 @@
   }
   .step-name { font-size: .85rem; font-weight: 500; letter-spacing: .06em; color: var(--white); margin-bottom: 8px; }
   .step-desc { font-size: .8rem; font-weight: 300; color: rgba(255,255,255,.55); line-height: 1.7; }
-
+ 
   /* ── CONTACT ── */
   .contact { background: var(--white); padding: 100px 5%; }
   .contact-inner {
@@ -360,19 +360,24 @@
   }
   .contact .section-h2 { margin-bottom: 16px; }
   .contact .section-body { margin-bottom: 48px; }
-
+ 
   .contact-cards { display: flex; gap: 24px; justify-content: center; margin-bottom: 48px; flex-wrap: wrap; }
   .contact-card {
     flex: 1; min-width: 200px;
     border: 1.5px solid rgba(27,92,76,.15);
     padding: 32px 28px; text-align: center;
     transition: border-color .25s, transform .25s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
   }
   .contact-card:hover { border-color: var(--teal); transform: translateY(-3px); }
   .contact-card svg { margin-bottom: 14px; }
   .contact-card-label { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
   .contact-card-val { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--dark); }
-
+ 
+  .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+ 
   .wa-btn {
     display: inline-flex; align-items: center; gap: 12px;
     background: #25d366; color: var(--white);
@@ -380,10 +385,19 @@
     font-family: 'Jost', sans-serif; font-size: .85rem;
     font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
     transition: background .2s, transform .2s;
-    margin: 0 auto;
   }
   .wa-btn:hover { background: #1aab55; transform: translateY(-2px); }
-
+ 
+  .fb-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #1877f2; color: var(--white);
+    padding: 16px 40px; text-decoration: none;
+    font-family: 'Jost', sans-serif; font-size: .85rem;
+    font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    transition: background .2s, transform .2s;
+  }
+  .fb-btn:hover { background: #0f65d4; transform: translateY(-2px); }
+ 
   /* ── FOOTER ── */
   footer {
     background: var(--teal-d); padding: 40px 5%;
@@ -392,10 +406,11 @@
   }
   footer .logo-text .brand { color: var(--gold-l); }
   .footer-copy { font-size: .78rem; color: rgba(255,255,255,.4); letter-spacing: .05em; }
-  .footer-links { display: flex; gap: 28px; }
+  .footer-links { display: flex; gap: 28px; align-items: center; }
   .footer-links a { font-size: .78rem; color: rgba(255,255,255,.5); text-decoration: none; letter-spacing: .08em; transition: color .2s; }
   .footer-links a:hover { color: var(--gold-l); }
-
+  .footer-fb-icon { display: inline-flex; align-items: center; gap: 6px; }
+ 
   /* ── WHATSAPP FAB ── */
   .wa-fab {
     position: fixed; bottom: 28px; right: 28px; z-index: 200;
@@ -408,7 +423,7 @@
     animation: pulse 2.5s ease-in-out infinite;
   }
   .wa-fab:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.5); }
-
+ 
   /* ── KEYFRAMES ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -422,7 +437,7 @@
     0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.4); }
     50%       { box-shadow: 0 6px 36px rgba(37,211,102,.65); }
   }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; height: auto; }
@@ -440,7 +455,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <a class="logo" href="#">
     <div class="logo-text">
@@ -448,17 +463,17 @@
       <span class="sub">Tailoring &amp; Alterations</span>
     </div>
   </a>
-
+ 
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
+ 
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
 </nav>
-
+ 
 <section class="hero">
   <div class="hero-left">
     <span class="hero-tag">South Asian Tailoring Specialists</span>
@@ -483,7 +498,7 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="strip">
   <span class="strip-item">Expert Tailoring</span>
   <span class="strip-dot"></span>
@@ -495,7 +510,7 @@
   <span class="strip-dot"></span>
   <span class="strip-item">Trusted by Families</span>
 </div>
-
+ 
 <section class="about" id="about">
   <div class="about-image">
     <div class="about-icon">
@@ -521,7 +536,7 @@
     <a class="btn-primary" href="https://wa.me/14166868230" target="_blank" style="align-self:flex-start">Book a Consultation</a>
   </div>
 </section>
-
+ 
 <section class="services" id="services">
   <div class="section-header">
     <p class="section-label">What We Do</p>
@@ -560,7 +575,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="process">
   <p class="section-label">Simple Process</p>
   <h2 class="section-h2">How It <em>Works</em></h2>
@@ -571,7 +586,7 @@
     <div class="step"><div class="step-circle">4</div><div class="step-name">Pick Up &amp; Enjoy</div></div>
   </div>
 </section>
-
+ 
 <section class="contact" id="contact">
   <div class="contact-inner">
     <p class="section-label">Get in Touch</p>
@@ -585,11 +600,34 @@
         <div class="contact-card-label">Hours</div>
         <div class="contact-card-val">Mon – Sat, 10am – 10pm</div>
       </div>
+      <a class="contact-card" href="https://www.facebook.com/profile.php?id=61572066844579" target="_blank">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="13" stroke="#1877f2" stroke-width="1.5"/>
+          <path d="M17.5 9H15.5C14.948 9 14.5 9.448 14.5 10V12H17.5L17 15H14.5V22H11.5V15H9.5V12H11.5V10C11.5 8.343 12.843 7 14.5 7H17.5V9Z" fill="#1877f2"/>
+        </svg>
+        <div class="contact-card-label" style="margin-top:4px;">Facebook</div>
+        <div class="contact-card-val">Desi Stitch</div>
+      </a>
     </div>
-    <a class="wa-btn" href="https://wa.me/14166868230" target="_blank">Chat on WhatsApp</a>
+    <div class="contact-btns">
+      <a class="wa-btn" href="https://wa.me/14166868230" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+          <path d="M14 1C6.82 1 1 6.82 1 14c0 2.4.63 4.65 1.73 6.6L1 27l6.6-1.71A13 13 0 0014 27c7.18 0 13-5.82 13-13S21.18 1 14 1z" fill="white"/>
+          <path d="M9.5 8.5c.22.55 1.35 2.8 1.46 3.03.11.22.11.45 0 .67-.11.22-.56.78-.78 1-.22.22-.34.45-.11.78.9 1.46 2.02 2.58 3.36 3.36.34.22.56.11.78-.11.22-.22.78-.9 1-.89.22 0 .45.11.67.22.22.11 2.47 1.12 3.03 1.46.56.22.56.56.45.9-.34.9-1.91 2.8-4.82 1.8-2.91-1-6.06-4.93-6.4-5.27-.34-.34-2.24-3.03-1.23-5.94 1-2.91 2.8-3.03 3.7-2.91z" fill="#25d366"/>
+        </svg>
+        Chat on WhatsApp
+      </a>
+      <a class="fb-btn" href="https://www.facebook.com/profile.php?id=61572066844579" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="white" fill-opacity="0.2"/>
+          <path d="M17.5 9H15.5C14.948 9 14.5 9.448 14.5 10V12H17.5L17 15H14.5V22H11.5V15H9.5V12H11.5V10C11.5 8.343 12.843 7 14.5 7H17.5V9Z" fill="white"/>
+        </svg>
+        Follow on Facebook
+      </a>
+    </div>
   </div>
 </section>
-
+ 
 <footer>
   <a class="logo" href="#">
     <div class="logo-text">
@@ -602,15 +640,23 @@
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61572066844579" target="_blank" class="footer-fb-icon">
+      <svg width="15" height="15" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <path d="M17.5 9H15.5C14.948 9 14.5 9.448 14.5 10V12H17.5L17 15H14.5V22H11.5V15H9.5V12H11.5V10C11.5 8.343 12.843 7 14.5 7H17.5V9Z" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+      Facebook
+    </a>
   </div>
 </footer>
-
+ 
 <a class="wa-fab" href="https://wa.me/14166868230" target="_blank" title="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
     <path d="M14 1C6.82 1 1 6.82 1 14c0 2.4.63 4.65 1.73 6.6L1 27l6.6-1.71A13 13 0 0014 27c7.18 0 13-5.82 13-13S21.18 1 14 1z" fill="white"/>
     <path d="M9.5 8.5c.22.55 1.35 2.8 1.46 3.03.11.22.11.45 0 .67-.11.22-.56.78-.78 1-.22.22-.34.45-.11.78.9 1.46 2.02 2.58 3.36 3.36.34.22.56.11.78-.11.22-.22.78-.9 1-.89.22 0 .45.11.67.22.22.11 2.47 1.12 3.03 1.46.56.22.56.56.45.9-.34.9-1.91 2.8-4.82 1.8-2.91-1-6.06-4.93-6.4-5.27-.34-.34-2.24-3.03-1.23-5.94 1-2.91 2.8-3.03 3.7-2.91z" fill="#25d366"/>
   </svg>
 </a>
-
+ 
 </body>
 </html>
+ 
